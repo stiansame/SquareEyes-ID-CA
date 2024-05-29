@@ -17,7 +17,7 @@ export async function getMovies() {
     const json = await response.json();
 
     resultsContainer.innerHTML = "";
-    favouritesContainer.innerHTML = "";
+    // favouritesContainer.innerHTML = "";
 
     const movies = json.data;
 
