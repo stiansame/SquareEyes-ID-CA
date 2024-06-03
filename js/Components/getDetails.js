@@ -77,9 +77,10 @@ function onSale(details) {
     discount = "";
   } else {
     discount =
-      "<span class='discount'>On Sale!</span>" +
+      "<div class='discount'><i class='fa-solid fa-certificate'></i><span>On Sale!</span></div>" +
       "<span class='regPrice'> Ord. price: Kr " +
       details.price;
+    +"</span";
   }
   return discount;
 }

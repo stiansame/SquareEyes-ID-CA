@@ -47,7 +47,8 @@ main,
 #player,
 #shoppingcart,
 #checkout,
-#register {
+#register,
+.suggestions {
   width: 100%;
   display: grid;
   grid-template-columns: 1rem 1fr 1rem;
@@ -201,7 +202,8 @@ main h1,
 #player h1,
 #shoppingcart h1,
 #checkout h1,
-#register h1 {
+#register h1,
+.suggestions h1 {
   margin: 2rem 0rem 1rem;
 }
 
@@ -1219,10 +1221,31 @@ form {
 }
 
 .discount {
-  padding: 0.5rem 1rem;
-  margin-left: 1rem;
-  background-color: #e2520f;
   font-weight: bold;
+  position: relative;
+  width: auto;
+  text-align: center;
+
+}
+
+.fa-certificate {
+  background: -webkit-linear-gradient(315deg, #ff0000 0%, #ffed00 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(600%, 350%);
+  position: relative;
+  padding: .5rem;
+  filter: drop-shadow(0 0.2rem 0.2rem rgba(0, 0, 0, 0.9));
+}
+
+
+.discount span {
+  z-index: 2;
+  width: max-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .regPrice {
@@ -1233,6 +1256,8 @@ form {
   font-size: smaller;
   font-weight: lighter;
 }
+
+
 
 /* .det_img {
   width: 100%;
@@ -1250,6 +1275,8 @@ form {
 .details-container .description-container .desc {
   padding: 1rem 0.5rem 1rem;
   border-bottom: #1c4b67 2px solid;
+  display: flex;
+  justify-content: space-between;
 }
 
 #rent {
@@ -1615,7 +1642,8 @@ form {
   #mypage,
   #player,
   #shoppingcart,
-  #checkout {
+  #checkout,
+  .suggestions {
     grid-template-columns: 2rem auto 2rem;
   }
 
