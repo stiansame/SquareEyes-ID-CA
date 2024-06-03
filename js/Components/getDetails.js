@@ -2,6 +2,7 @@
 
 //imports
 import { createMessage } from "../Components/Message.js";
+import { url } from "../script.js";
 
 const posterContainer = document.querySelector(".poster");
 export const resultsContainer = document.querySelector(
@@ -56,6 +57,9 @@ function createDetails(details) {
     <div class="cta_button PushToCart">
     Add to cart</div>
     </div>`;
+
+  const filter = details.genre;
+  console.log(filter);
 }
 
 function price(details) {
@@ -99,3 +103,14 @@ export function checkForDetails() {
     return JSON.parse(sessionDetails);
   }
 }
+
+//get suggestions
+
+async function getAllMovies() {
+  const response = await fetch(url);
+  const json = await response.json();
+  const movies = json.data;
+  console.log(movies);
+}
+
+getAllMovies();
