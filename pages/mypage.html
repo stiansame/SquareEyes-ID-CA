@@ -105,117 +105,94 @@
       <h1>My Page</h1>
 
       <div class="faq-content">
-        <input type="radio" name="faq1" class="faq-selector" id="q1">
-        <div class="faq">
-          <div class="question"><label for="q1">Personal Information</label>
-            <label for="q1"><i class="fa-solid fa-plus"></i>
-              <i class="fa-solid fa-minus"></i>
-            </label>
-          </div>
-          <div class="answer" id="a1">
-            <form>
-              <label for="fullname">Full name</label>
-              <input type="text" name="fullname" id="fullname" class="form__input" placeholder="Full name" autocomplete="name" required>
-              <label for="email2">E-mail</label>
-              <input type="email" name="email2" id="email2" class="form__input" placeholder="E-mail" autocomplete="email" required>
-              <label for="password2">Password</label>
-              <input type="password" name="password2" id="password2" class="form__input" placeholder="Type in password" autocomplete="new-password" required>
-              <div class="actions">
-                <input type="submit" value="Save" class="cta_button">
-              </div>
-            </form>
-          </div>
-        </div>
-        <input type="radio" name="faq1" class="faq-selector" id="q2">
-        <div class="faq">
-          <div class="question"><label for="q2">Payment Information (optional)</label>
-            <label for="q2"><i class="fa-solid fa-plus"></i>
-              <i class="fa-solid fa-minus"></i>
-            </label>
-          </div>
-          <div class="answer" id="a2">
-            <p class="desc">
-              No information registered.
-            </p>
-          </div>
-        </div>
-        <input type="radio" name="faq1" class="faq-selector" id="q3">
-        <div class="faq">
-          <div class="question"><label for="q3">Preferences</label>
-            <label for="q3"><i class="fa-solid fa-plus"></i>
-              <i class="fa-solid fa-minus"></i>
-            </label>
-          </div>
-          <div class="answer" id="a3">
-            <div class="preferences">
-              <div class="selector">
-                <input type="checkbox" name="horror" id="horror" checked>
-                <label for="horror">Horror</label>
-              </div>
-              <div class="selector">
-                <input type="checkbox" name="romance" id="romance">
-                <label for="romance">Romance</label>
-              </div>
-              <div class="selector">
-                <input type="checkbox" name="PG" id="PG">
-                <label for="PG">PG</label>
-              </div>
-              <div class="selector">
-                <input type="checkbox" name="scifi" id="scifi" checked>
-                <label for="scifi">Sci-Fi</label>
-              </div>
-              <div class="selector">
-                <input type="checkbox" name="western" id="western">
-                <label for="western">Western</label>
-              </div>
-              <div class="selector">
-                <input type="checkbox" name="thriller" id="thriller" checked>
-                <label for="thriller">Thriller</label>
-              </div>
-              <div class="selector">
-                <input type="checkbox" name="doc" id="doc">
-                <label for="doc">Documentary</label>
-              </div>
-              <div class="selector">
-                <input type="checkbox" name="drama" id="drama">
-                <label for="drama">Drama</label>
-              </div>
-              <div class="selector">
-                <input type="checkbox" name="pg13" id="pg13">
-                <label for="pg13">PG-13</label>
-              </div>
-              <div class="selector">
-                <input type="checkbox" name="action" id="action">
-                <label for="action">Action</label>
-              </div>
-              <div class="selector">
-                <input type="checkbox" name="comedy" id="comedy">
-                <label for="comedy">Comedy</label>
-              </div>
-              <div class="selector">
-                <input type="checkbox" name="nc17" id="nc17" checked>
-                <label for="nc17">NC-17</label>
-              </div>
 
+        <button class="accordion">Personal information</button>
+        <div class="panel">
+          <form>
+            <label for="fullname">Full name</label>
+            <input type="text" name="fullname" id="fullname" class="form__input" placeholder="Full name" autocomplete="name" required>
+            <label for="email2">E-mail</label>
+            <input type="email" name="email2" id="email2" class="form__input" placeholder="E-mail" autocomplete="email" required>
+            <label for="password2">Password</label>
+            <input type="password" name="password2" id="password2" class="form__input" placeholder="Type in password" autocomplete="new-password" required>
+            <div class="actions">
+              <input type="submit" value="Save" class="cta_button">
             </div>
+          </form>
+        </div>
+        <button class="accordion">Payment Information (optional)</button>
+        <div class="panel">
+          <p class="desc">
+            No information registered.
+          </p>
+        </div>
+
+        <button class="accordion">Preferences</button>
+        <div class="panel">
+          <div class="preferences desc">
+            <div class="selector">
+              <input type="checkbox" name="horror" id="horror" checked>
+              <label for="horror">Horror</label>
+            </div>
+            <div class="selector">
+              <input type="checkbox" name="romance" id="romance">
+              <label for="romance">Romance</label>
+            </div>
+            <div class="selector">
+              <input type="checkbox" name="PG" id="PG">
+              <label for="PG">PG</label>
+            </div>
+            <div class="selector">
+              <input type="checkbox" name="scifi" id="scifi" checked>
+              <label for="scifi">Sci-Fi</label>
+            </div>
+            <div class="selector">
+              <input type="checkbox" name="western" id="western">
+              <label for="western">Western</label>
+            </div>
+            <div class="selector">
+              <input type="checkbox" name="thriller" id="thriller" checked>
+              <label for="thriller">Thriller</label>
+            </div>
+            <div class="selector">
+              <input type="checkbox" name="doc" id="doc">
+              <label for="doc">Documentary</label>
+            </div>
+            <div class="selector">
+              <input type="checkbox" name="drama" id="drama">
+              <label for="drama">Drama</label>
+            </div>
+            <div class="selector">
+              <input type="checkbox" name="pg13" id="pg13">
+              <label for="pg13">PG-13</label>
+            </div>
+            <div class="selector">
+              <input type="checkbox" name="action" id="action">
+              <label for="action">Action</label>
+            </div>
+            <div class="selector">
+              <input type="checkbox" name="comedy" id="comedy">
+              <label for="comedy">Comedy</label>
+            </div>
+            <div class="selector">
+              <input type="checkbox" name="nc17" id="nc17" checked>
+              <label for="nc17">NC-17</label>
+            </div>
+
           </div>
         </div>
-        <input type="radio" name="faq1" class="faq-selector" id="q4">
-        <div class="faq">
-          <div class="question"><label for="q4">Library</label>
-            <label for="q4"><i class="fa-solid fa-plus"></i>
-              <i class="fa-solid fa-minus"></i>
-            </label>
-          </div>
-          <div class="answer" id="a4">
-            <div class="library-content">
-              <a href="player.html"> <img src="../images/dunkirk-movie-poster_2.jpg" alt="Dunkirk Movie"></a>
-              <img class="inactive" src="../images/deadpool-movie-poster.jpg" alt="Deadpool Movie">
-              <img class="inactive" src="../images/alita-battle-angel-movie-poster.jpg" alt="Alita Battle Angel Movie">
-              <img class="inactive" src="../images/logan-movie-poster.jpg" alt="Logan Movie">
-            </div>
+
+        <button class="accordion">Library</button>
+        <div class="panel">
+          <div class="library-content">
+            <a href="player.html"> <img src="../images/dunkirk-movie-poster_2.jpg" alt="Dunkirk Movie"></a>
+            <img class="inactive" src="../images/deadpool-movie-poster.jpg" alt="Deadpool Movie">
+            <img class="inactive" src="../images/alita-battle-angel-movie-poster.jpg" alt="Alita Battle Angel Movie">
+            <img class="inactive" src="../images/logan-movie-poster.jpg" alt="Logan Movie">
           </div>
         </div>
+
+
 
 
       </div>

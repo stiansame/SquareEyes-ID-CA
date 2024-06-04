@@ -1078,14 +1078,40 @@ form {
 
 /*--- FAQ & Mypage Accordion ---*/
 
-.payment,
+.accordion {
+  background-color: #363638;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-weight: bold;
+  transition: 0.4s;
+  font-family: "Elza Narrow", sans-serif;
+  font-size: 1.2rem;
+}
+
+.accordion .active,
+.accordion:hover {
+  background-color: #168ed9;
+}
+
+.panel {
+  background-color: #ffffff;
+  color: #363638;
+  padding: 1rem;
+  display: none;
+  border-left: #168ed9 0.3rem solid;
+  border-right: #168ed9 0.3rem solid;
+  border-bottom: #168ed9 0.3rem solid;
+  overflow: hidden;
+}
+
 .faq-content {
-  display: grid;
   width: 100%;
   background-color: var(--menu-bg);
-  grid-template-rows: repeat(4, auto);
-  gap: 1rem;
-  align-items: start;
   filter: drop-shadow(0 0.5rem 0.5rem rgba(0, 0, 0, 0.8));
 }
 
@@ -1104,80 +1130,7 @@ form {
   display: none;
 }
 
-.payment .faq,
-.faq-content .faq {
-  position: relative;
-}
 
-.payment .question,
-.faq-content .question {
-  padding: 0.5rem 1rem;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 1rem;
-  justify-content: space-between;
-  align-items: center;
-  font-family: "Elza Narrow", sans-serif;
-  font-size: clamp(1rem, 3vw, 2rem);
-  font-weight: bold;
-}
-
-.payment .question:hover,
-.faq-content .question:hover {
-  background-color: #168ed9;
-}
-
-.payment .question label,
-.faq-content .question label {
-  cursor: pointer;
-  width: 100%;
-}
-
-.payment .answer,
-.faq-content .answer {
-  background-color: #edeae6;
-  color: #363638;
-  padding: 1rem;
-  display: none;
-  opacity: 0;
-  border-left: #168ed9 0.3rem solid;
-  border-right: #168ed9 0.3rem solid;
-  border-bottom: #168ed9 0.3rem solid;
-}
-
-#q1:checked~.faq #a1,
-#q2:checked~.faq #a2,
-#q3:checked~.faq #a3,
-#q4:checked~.faq #a4 {
-  display: block;
-  opacity: 1;
-  transition: all 0.4s ease-in-out;
-}
-
-#q1:checked~.faq:nth-child(2),
-#q2:checked~.faq:nth-child(4),
-#q3:checked~.faq:nth-child(6),
-#q4:checked~.faq:nth-child(8) {
-  background-color: #168ed9;
-}
-
-.question i:last-child {
-  display: none;
-}
-
-#q1:checked~.faq:nth-child(2) i:last-child,
-#q2:checked~.faq:nth-child(4) i:last-child,
-#q3:checked~.faq:nth-child(6) i:last-child,
-#q4:checked~.faq:nth-child(8) i:last-child {
-  display: contents;
-}
-
-#q1:checked~.faq:nth-child(2) i:first-of-type,
-#q2:checked~.faq:nth-child(4) i:first-of-type,
-#q3:checked~.faq:nth-child(6) i:first-of-type,
-#q4:checked~.faq:nth-child(8) i:first-of-type {
-  display: none;
-}
 
 /*-----movie details-----*/
 
@@ -1275,17 +1228,9 @@ form {
 
 }
 
-/* .det_img {
-  width: 100%;
-  height: 15rem;
-  object-fit: cover;
-} */
-
 .description-container {
   grid-area: 2/1/3/2;
-  /* display: grid;
-  grid-template-rows: repeat(5, auto);
-  gap: 0.5rem; */
+
 }
 
 .details-container .description-container .desc {
@@ -1319,121 +1264,6 @@ form {
 #review {
   border-bottom: #1c4b67 solid 2px;
 }
-
-/*--- slider here!---*/
-
-/* .movie-slider {
-  grid-area: 1/1/2/2;
-  position: relative;
-  width: 100%;
-  max-height: 25rem;
-  overflow: hidden;
-}
-
-.movie-slide {
-  float: left;
-  height: 100%;
-  width: 0%;
-  transition: width 0.15s ease-in-out;
-  padding: 0;
-}
-
-.movie-slide>* {
-  transition: transform 0.15s;
-  transform: scale(1);
-}
-
-.controls {
-  width: 100%;
-  height: 3rem;
-  z-index: 11;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.controls label {
-  transition: opacity 0.3s ease-out;
-  display: none;
-  width: 3rem;
-  height: 3rem;
-  opacity: 0.4;
-  cursor: pointer;
-  filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.8));
-}
-
-.controls label:hover {
-  opacity: 1;
-}
-
-#slide-1:checked~.controls label:nth-child(2),
-#slide-2:checked~.controls label:nth-child(3),
-#slide-3:checked~.controls label:nth-child(4),
-#slide-4:checked~.controls label:nth-child(1) {
-  background: url(../images/slider_nav/chevron-right-solid_white.svg) no-repeat;
-  float: right;
-  display: block;
-}
-
-#slide-1:checked~.controls label:nth-last-child(1),
-#slide-2:checked~.controls label:nth-last-child(4),
-#slide-3:checked~.controls label:nth-last-child(3),
-#slide-4:checked~.controls label:nth-last-child(2) {
-  background: url(../images/slider_nav/chevron-left-solid_white.svg) no-repeat;
-  float: left;
-  display: block;
-}
-
-.bullets {
-  display: flex;
-  gap: 1.5rem;
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 11;
-}
-
-.bullets label {
-  height: 1rem;
-  width: 1rem;
-  background-color: #e6eef2;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: all 0.4s ease-in-out;
-  filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.8));
-  opacity: 0.4;
-}
-
-.bullets label:hover {
-  opacity: 1;
-  background-color: #168ed9;
-}
-
-#slide-1:checked~.s1,
-#slide-2:checked~.s2,
-#slide-3:checked~.s3,
-#slide-4:checked~.s4 {
-  width: 100%;
-}
-
-#slide-1:checked~.s1>*,
-#slide-2:checked~.s2>*,
-#slide-3:checked~.s3>*,
-#slide-4:checked~.s4>* {
-  transform: scale(1);
-}
-
-#slide-1:checked~.bullets label[for="slide-1"],
-#slide-2:checked~.bullets label[for="slide-2"],
-#slide-3:checked~.bullets label[for="slide-3"],
-#slide-4:checked~.bullets label[for="slide-4"] {
-  width: 4.5rem;
-  background-color: #168ed9;
-} */
-
-/* ---modal--- */
 
 .modal {
   padding: 1rem;
@@ -1470,7 +1300,6 @@ form {
 
 .popup img,
 .library img,
-.faq img,
 .cart-content img {
   max-height: 300px;
   border-radius: 0.2rem;
@@ -1551,6 +1380,7 @@ form {
   margin-top: 1rem;
 }
 
+.panel .library-content,
 .library-content,
 .cart-content {
   display: grid;
@@ -1561,22 +1391,25 @@ form {
   padding: 2rem;
 }
 
+.panel img,
 .library img,
-.faq img,
 .cart-content img {
   outline: none;
   max-height: 150px;
   cursor: pointer;
 }
 
+.panel .library-content img:hover,
 .library-content img:hover {
   outline: #168ed9 solid 2px;
 }
 
+.panel .library-content .inactive,
 .library-content .inactive {
   filter: saturate(0.2) blur(1px) drop-shadow(0 0.5rem 0.5rem rgba(0, 0, 0, 0.8));
 }
 
+.panel .library-content .inactive:hover,
 .library-content .inactive:hover {
   outline: none;
   cursor: default;
