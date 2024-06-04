@@ -356,10 +356,19 @@ nav .menu-item:hover {
   display: none;
 }
 
+
 .menu-item {
   position: relative;
 }
 
+.menu-cart {
+  font-size: 3rem;
+  position: absolute;
+  top: 1rem;
+  right: 7rem;
+}
+
+#top-cart,
 #cart {
   /* display: flex;
   justify-content: flex-start; */
@@ -368,7 +377,8 @@ nav .menu-item:hover {
   cursor: pointer;
 }
 
-#counter {
+#counter,
+#menuCounter {
   display: flex;
   background-color: #e2520f;
   justify-content: center;
@@ -1666,6 +1676,11 @@ form {
   }
 
   /*Navbar styling here!*/
+
+  .menu-cart {
+    display: none;
+    visibility: hidden;
+  }
 
   .header-container {
     grid-template-columns: 2rem auto 2rem;

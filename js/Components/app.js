@@ -5,6 +5,7 @@
 const apiUrl = "https://v2.api.noroff.dev/square-eyes";
 const addToCartParentEL = document.querySelector(".cartFunction");
 const cartEl = document.querySelector("#cart");
+const menuCartEl = document.querySelector("#top-cart");
 const bodyEl = document.querySelector("body");
 const closeEL = document.querySelector(".cartTab .close");
 const calTotalEl = document.querySelector(".subTotal");
@@ -15,6 +16,7 @@ checkOutBtn.classList.add("disabled");
 
 let listCartHTML = document.querySelector(".cartList");
 let cartCounter = document.querySelector("#counter");
+let menuCounter = document.querySelector("#menuCounter");
 let products = [];
 let cartItems = [];
 
@@ -31,6 +33,11 @@ let cartItems = [];
 
 //cart-toggle
 cartEl.addEventListener("click", () => {
+  bodyEl.classList.toggle("showCart");
+  renderTotal();
+  disableCheckOut();
+});
+menuCartEl.addEventListener("click", () => {
   bodyEl.classList.toggle("showCart");
   renderTotal();
   disableCheckOut();
@@ -151,6 +158,7 @@ const renderCart = () => {
     });
   }
   cartCounter.innerText = totalQuantity;
+  menuCounter.innerText = totalQuantity;
 };
 
 //CALC AND RENDER SUBTOTAL
