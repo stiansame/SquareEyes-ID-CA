@@ -47,8 +47,7 @@ main,
 #player,
 #shoppingcart,
 #checkout,
-#register,
-.suggestions {
+#register {
   width: 100%;
   display: grid;
   grid-template-columns: 1rem 1fr 1rem;
@@ -206,6 +205,8 @@ main h1,
 .suggestions h1 {
   margin: 2rem 0rem 1rem;
 }
+
+
 
 #movies h2 {
   margin: 2rem 0rem 1rem -1rem;
@@ -782,7 +783,8 @@ footer img:hover {
 
 .comFav,
 .movie-carousel,
-.favourites {
+.favourites,
+.byGenre {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1257,7 +1259,11 @@ form {
   font-weight: lighter;
 }
 
+.suggestions {
+  padding-left: 2rem;
+  padding-right: 2rem;
 
+}
 
 /* .det_img {
   width: 100%;
@@ -1647,8 +1653,7 @@ form {
   #mypage,
   #player,
   #shoppingcart,
-  #checkout,
-  .suggestions {
+  #checkout {
     grid-template-columns: 2rem auto 2rem;
   }
 

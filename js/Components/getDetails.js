@@ -5,6 +5,9 @@ import { createMessage } from "../Components/Message.js";
 import { url } from "../script.js";
 
 const posterContainer = document.querySelector(".poster");
+
+const SuggestionContainer = document.querySelector(".byGenre");
+
 export const resultsContainer = document.querySelector(
   ".description-container"
 );
@@ -27,6 +30,7 @@ export async function getDetails() {
     createDetails(details);
     checkForDetails(details);
     storeDetail(details);
+    applyFilter(details);
   } catch (error) {
     resultsContainer.innerHTML = message;
     document.title = "Nope! Didn't catch that...";
@@ -57,9 +61,6 @@ function createDetails(details) {
     <div class="cta_button PushToCart">
     Add to cart</div>
     </div>`;
-
-  const filter = details.genre;
-  console.log(filter);
 }
 
 function price(details) {
@@ -106,11 +107,31 @@ export function checkForDetails() {
 
 //get suggestions
 
-async function getAllMovies() {
+async function applyFilter(details) {
+  const filter = details.genre;
   const response = await fetch(url);
   const json = await response.json();
   const movies = json.data;
   console.log(movies);
-}
+  console.log(filter);
 
-getAllMovies();
+  const filteredMovies = movies.filter(filterMovies);
+
+  function filterMovies(movie) {
+    if (movie.genre === filter) {
+      return true;
+    }
+  }
+  console.log(filteredMovies);
+
+  //Empty Suggestions
+  SuggestionContainer.innerHTML = "";
+
+  filteredMovies.forEach((movie) => {
+    SuggestionContainer.innerHTML += `<div class="movie">
+                           <a href ="/pages/movie_details2.html?id=${movie.id}">
+                           <img src="${movie.image.url}" alt="${movie.title}">
+                           </a>
+                            </div>`;
+  });
+}
